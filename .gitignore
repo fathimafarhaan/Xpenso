@@ -1,0 +1,14 @@
+# Node modules (don't upload thousands of dependency files)
+backend/node_modules/
+frontend/node_modules/
+
+# Environment config (contains secrets)
+backend/.env
+.env
+
+# React build (auto-generated after build)
+frontend/build/
+
+# System files
+.DS_Store
+Thumbs.db
