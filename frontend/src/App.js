@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Login from './components/Login';
+import Dashboard from './components/Dashboard';
+import './index.css'; 
 
-function App() {
+export default function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLoginSuccess = () => {
+    setIsLoggedIn(true);
+  };
+
   return (
-    <div>
-      <h1>Expense Tracker</h1>
+    <div className="min-h-screen bg-gray-100 font-inter">
+      {isLoggedIn ? (
+        <Dashboard />
+      ) : (
+        <Login onLogin={handleLoginSuccess} />
+      )}
     </div>
   );
 }
-
-export default App;
